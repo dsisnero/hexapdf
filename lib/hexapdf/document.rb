@@ -77,6 +77,7 @@ module HexaPDF
     autoload(:Fonts, 'hexapdf/document/fonts')
     autoload(:Images, 'hexapdf/document/images')
     autoload(:Files, 'hexapdf/document/files')
+    autoload(:Form, 'hexapdf/document/form')
 
     # :call-seq:
     #   Document.open(filename, **docargs)                   -> doc
@@ -471,6 +472,10 @@ module HexaPDF
     # Returns the Files object that provides convenience methods for working with files.
     def files
       @files ||= Files.new(self)
+    end
+
+    def form
+      forms ||= Form.new(self)
     end
 
     # Returns the Fonts object that provides convenience methods for working with fonts.
