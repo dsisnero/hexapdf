@@ -94,6 +94,14 @@ module HexaPDF
         self[:Pages] ||= document.add(Type: :Pages)
       end
 
+      def form
+        self[:AcroForm]
+      end
+
+      def add_acroform
+        document.add(Type: :AcroForm)
+      end
+
       private
 
       # Ensures that there is a valid page tree.
